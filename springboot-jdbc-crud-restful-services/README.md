@@ -1,6 +1,6 @@
-# springboot-crud-restful-webservices
-## YouYube Video
-Spring Boot, MySQL, JPA, Hibernate Restful CRUD API Tutorial at https://youtu.be/QXFgzomuDOg
+# StudentManagement
+Student Management System is a basic CRUD Restful API created using Java, Spring Boot, JDBC Template, and MySQL.
 
-## Blog post
-https://www.javaguides.net/2020/04/spring-boot-mysql-jpa-hibernate-restful-crud-api-tutorial.html
+A detailed explanation of the implementation of this project is present here- https://medium.com/p/aa9cc7855025
+
+Reach me out at- https://www.linkedin.com/in/gauravshah97/

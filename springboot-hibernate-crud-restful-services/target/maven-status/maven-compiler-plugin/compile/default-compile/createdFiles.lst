@@ -1,0 +1,9 @@
+net\javaguides\springboot\SpringbootCrudRestfulWebservicesApplication.class
+net\javaguides\springboot\config\HibernateConfig.class
+net\javaguides\springboot\entity\User.class
+net\javaguides\springboot\exception\ErrorDetails.class
+net\javaguides\springboot\service\UserService.class
+net\javaguides\springboot\dao\UserDAO.class
+net\javaguides\springboot\controller\UserController.class
+net\javaguides\springboot\exception\GlobalExceptionHandler.class
+net\javaguides\springboot\exception\ResourceNotFoundException.class

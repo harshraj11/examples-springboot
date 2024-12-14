@@ -1,0 +1,6 @@
+com\spring\jdbctemplate\model\Emp.class
+com\spring\jdbctemplate\repository\EmpRepoImpl$1.class
+com\spring\jdbctemplate\repository\EmpRepoImpl.class
+com\spring\jdbctemplate\StudentManagementApplication.class
+com\spring\jdbctemplate\controller\EmpController.class
+com\spring\jdbctemplate\repository\EmpRepo.class

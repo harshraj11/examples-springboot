@@ -56,7 +56,7 @@ public class UserController {
 	}
 	
 	// get all users
-	@GetMapping("/getAllUsersfromDB")
+	@GetMapping("/getAllUsersfromDB-jpa")
 	public List<User> getAllUsers1() {
 	List<User> userList = userRepository.findAll();
 	return userList;
