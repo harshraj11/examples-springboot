@@ -1,10 +1,12 @@
 package net.javaguides.springboot.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import jdk.nashorn.internal.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import net.javaguides.springboot.entity.User;
 import net.javaguides.springboot.exception.ResourceNotFoundException;
 import net.javaguides.springboot.repository.UserRepository;
+import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/api/users")
@@ -24,6 +27,10 @@ public class UserController {
 
 	@Autowired
 	private UserRepository userRepository;
+
+	@Autowired
+	private RestTemplate restTemplate;
+
 
 	@GetMapping("/hello")
 	public String sum() {
@@ -94,4 +101,28 @@ public class UserController {
 		 this.userRepository.delete(existingUser);
 		 return ResponseEntity.ok().build();
 	}
+
+	@GetMapping("/fetchEmployeeJDBCData")
+	public String fetchEmployeeData(){
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		headers.add("User-Agent", "Application");
+		HttpEntity<String> entity = new HttpEntity<String>(headers);
+		ResponseEntity<String> response=restTemplate.exchange("http://localhost:8003/emp/v1/getAllEmp", HttpMethod.GET, entity, String.class);
+		System.out.println(response);
+
+		return response.getBody();
+	}
+
+	@GetMapping(value = "/productList")
+	public String getProductList() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		headers.add("User-Agent", "Application");
+		HttpEntity <String> entity = new HttpEntity<String>(headers);
+		ResponseEntity<String> response=restTemplate.exchange("https://catfact.ninja/fact", HttpMethod.GET, entity, String.class);
+		System.out.println(response);
+		return response.getBody();
+	}
+
 }
